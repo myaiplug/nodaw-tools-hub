@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tools.halfscrew.com/sitemap.xml
