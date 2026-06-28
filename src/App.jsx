@@ -21,29 +21,27 @@ import FAQ from './components/FAQ';
 function ToolPage({ children, path, title }) {
   const navigate = useNavigate();
   return (
-    <div className="min-h-screen bg-nodaw-black text-nodaw-text overflow-x-hidden">
+    <div className="min-h-screen bg-[#000000] text-[#f5f5f5] overflow-x-hidden">
       <div className="noise-overlay" />
       <Navigation />
       <SeoHelmet path={path} />
-      <main className="pt-24 pb-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <button onClick={() => navigate('/')} className="mb-6 inline-flex items-center gap-2 text-xs text-nodaw-muted hover:text-nodaw-gold font-semibold uppercase tracking-widest transition-colors">
+      <main className="pt-28 pb-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <button onClick={() => navigate('/')} className="mb-6 inline-flex items-center gap-2 text-[9px] text-[#64748b] hover:text-[#22d3ee] font-['JetBrains_Mono',monospace] font-bold uppercase tracking-[0.12em] transition-colors">
             ← Back to Tools
           </button>
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-10 h-10 rounded-xl bg-nodaw-gold/15 flex items-center justify-center flex-shrink-0">
-              <Music className="w-5 h-5 text-nodaw-gold" />
+          <div className="nd-panel overflow-hidden">
+            <div className="nd-titlebar">
+              <div className="nd-led" />
+              <span className="nd-titlebar-title">{title}</span>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-black tracking-tighter text-white">{title}</h1>
-          </div>
-          <AnimatePresence mode="wait">
-            <motion.div key={path} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.4 }}>
+            <div className="p-5 sm:p-6">
               <AdUnit slot="1234567890" />
               <div className="my-6">{children}</div>
               <AdUnit slot="0987654321" />
               <FAQ path={path} />
-            </motion.div>
-          </AnimatePresence>
+            </div>
+          </div>
         </div>
       </main>
       <FooterCTA />
@@ -68,38 +66,38 @@ function HomePage() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-nodaw-black text-nodaw-text overflow-x-hidden">
+    <div className="min-h-screen bg-[#000000] text-[#f5f5f5] overflow-x-hidden">
       <div className="noise-overlay" />
       <SeoHelmet path="/" />
       <Navigation />
 
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-nodaw-black via-nodaw-dark to-nodaw-black" />
-        <ParticleField count={60} />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-nodaw-gold/10 rounded-full blur-[120px] animate-pulse-glow" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-nodaw-cyan/8 rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: '2s' }} />
+        <div className="absolute inset-0 bg-[#000000]" />
+        <ParticleField count={40} />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#22d3ee]/5 rounded-full blur-[120px] animate-pulse-glow" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#c8a24a]/5 rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: '2s' }} />
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8">
-            <Zap className="w-4 h-4 text-nodaw-gold" />
-            <span className="text-xs font-semibold text-nodaw-muted uppercase tracking-widest">Free Creator Tools — Powered by NoDAW</span>
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/[0.08] bg-[rgba(0,0,0,0.6)] backdrop-blur-[12px] mb-8">
+            <div className="w-[5px] h-[5px] rounded-full bg-[#22d3ee] shadow-[0_0_8px_rgba(34,211,238,0.5)]" />
+            <span className="text-[9px] font-['JetBrains_Mono',monospace] font-bold text-[#64748b] uppercase tracking-[0.15em]">Free Creator Tools — Powered by NoDAW</span>
           </motion.div>
 
-          <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] mb-6">
+          <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-['Rajdhani',sans-serif] font-bold tracking-tighter leading-[0.9] mb-6">
             <span className="block text-white">Create.</span>
-            <span className="block text-gradient">Convert.</span>
+            <span className="block text-[#22d3ee]">Convert.</span>
             <span className="block text-white">Launch.</span>
           </motion.h1>
 
-          <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }} className="text-lg md:text-xl text-nodaw-muted max-w-2xl mx-auto mb-10 leading-relaxed">
+          <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }} className="text-lg md:text-xl text-[#94a3b8] max-w-2xl mx-auto mb-10 leading-relaxed">
             Ten professional creator tools — convert, trim, effects, vocal isolate, karaoke, mastering, and more. All free, all browser-based.
           </motion.p>
 
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }} className="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto">
             {[{ value: '10', label: 'Free Tools' }, { value: '0', label: 'Sign-up' }, { value: '<1s', label: 'Processing' }].map((stat, i) => (
               <div key={i} className="text-center">
-                <div className="text-2xl md:text-3xl font-black text-gradient">{stat.value}</div>
-                <div className="text-xs text-nodaw-muted uppercase tracking-widest mt-1">{stat.label}</div>
+                <div className="text-2xl md:text-3xl font-bold text-[#22d3ee]">{stat.value}</div>
+                <div className="text-[9px] text-[#64748b] font-['JetBrains_Mono',monospace] uppercase tracking-[0.12em] mt-1">{stat.label}</div>
               </div>
             ))}
           </motion.div>
@@ -107,15 +105,14 @@ function HomePage() {
       </section>
 
       <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-nodaw-black via-nodaw-dark to-nodaw-black" />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-nodaw-gold/20 to-transparent" />
-        <AdUnit slot="home_mid" />
+        <div className="absolute inset-0 bg-[#000000]" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(34,211,238,0.15)] to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 mt-8">
           <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter mb-4">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-['Rajdhani',sans-serif] font-bold text-white tracking-tighter mb-4">
               Choose Your Tool.
               <br />
-              <span className="text-gradient">Start Creating.</span>
+              <span className="text-[#22d3ee]">Start Creating.</span>
             </h2>
           </motion.div>
 
@@ -124,15 +121,15 @@ function HomePage() {
               const Icon = tool.icon;
               return (
                 <motion.button key={tool.id} initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: i * 0.08 }} onClick={() => navigate(tool.path)} className="group relative text-left">
-                  <div className="rounded-3xl p-8 glass hover:bg-white/[0.04] transition-all duration-500 h-full border border-nodaw-border hover:border-white/10">
-                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500" style={{ background: `${tool.color}15` }}>
-                      <Icon className="w-7 h-7" style={{ color: tool.color }} />
+                  <div className="nd-panel p-6 transition-all duration-500 h-full hover:border-[rgba(34,211,238,0.2)]">
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="w-[5px] h-[5px] rounded-full" style={{ backgroundColor: tool.color, boxShadow: `0 0 8px ${tool.color}40` }} />
+                      <span className="text-[9px] font-['JetBrains_Mono',monospace] font-bold uppercase tracking-[0.12em] text-[#64748b]">{tool.subtitle}</span>
                     </div>
-                    <span className="text-xs font-black uppercase tracking-widest" style={{ color: tool.color }}>{tool.subtitle}</span>
-                    <h3 className="text-2xl font-black text-white mt-1 tracking-tight mb-3">{tool.title}</h3>
-                    <p className="text-sm text-nodaw-muted leading-relaxed mb-6">{tool.description}</p>
-                    <span className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: tool.color }}>
-                      Launch Tool <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <h3 className="text-xl font-['Rajdhani',sans-serif] font-bold text-white tracking-tight mb-2">{tool.title}</h3>
+                    <p className="text-[12px] text-[#94a3b8] leading-relaxed mb-4">{tool.description}</p>
+                    <span className="inline-flex items-center gap-2 text-[10px] font-['JetBrains_Mono',monospace] font-bold uppercase tracking-[0.1em]" style={{ color: tool.color }}>
+                      Launch <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </div>
                 </motion.button>
@@ -169,24 +166,24 @@ export default function App() {
 
 const NoDAWFunnel = () => (
   <section className="relative py-32 overflow-hidden">
-    <div className="absolute inset-0 bg-nodaw-dark" />
-    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-nodaw-gold/30 to-transparent" />
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-nodaw-gold/5 rounded-full blur-[200px]" />
+    <div className="absolute inset-0 bg-[#080a0e]" />
+    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(34,211,238,0.2)] to-transparent" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[rgba(34,211,238,0.04)] rounded-full blur-[200px]" />
 
     <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
       <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter mb-6">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-['Rajdhani',sans-serif] font-bold text-white tracking-tighter mb-6">
           Ready for the
           <br />
-          <span className="text-gradient">Full Studio?</span>
+          <span className="text-[#22d3ee]">Full Studio?</span>
         </h2>
-        <p className="text-nodaw-muted text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-[#94a3b8] text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
           These free tools are just the beginning. NoDAW is a complete DAW-less production ecosystem — CLI-first, one-time purchase, zero subscriptions.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="https://nodaw.studio" target="_blank" rel="noopener noreferrer" className="group px-8 py-4 rounded-2xl bg-gradient-to-r from-nodaw-gold to-nodaw-amber text-nodaw-black font-black text-sm uppercase tracking-widest hover:shadow-2xl hover:shadow-nodaw-gold/30 transition-all active:scale-95 inline-flex items-center gap-2">
+          <a href="https://nodaw.studio" target="_blank" rel="noopener noreferrer" className="nd-btn nd-btn-primary text-[11px] no-underline">
             Explore NoDAW Studio
-            <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ExternalLink className="w-3.5 h-3.5" />
           </a>
         </div>
       </motion.div>
@@ -195,15 +192,13 @@ const NoDAWFunnel = () => (
 );
 
 const FooterCTA = () => (
-  <footer className="relative py-12 border-t border-nodaw-border">
+  <footer className="relative py-10 border-t border-white/[0.06]">
     <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div className="flex items-center gap-2">
-        <div className="w-6 h-6 rounded-md bg-gradient-to-br from-nodaw-gold to-nodaw-amber flex items-center justify-center">
-          <Zap className="w-3 h-3 text-nodaw-black" />
-        </div>
-        <span className="text-sm font-black tracking-tighter uppercase italic text-white">No<span className="text-gradient">DAW</span></span>
+      <div className="flex items-center gap-3">
+        <div className="w-[5px] h-[5px] rounded-full bg-[#22d3ee] shadow-[0_0_8px_rgba(34,211,238,0.5)]" />
+        <span className="text-[11px] font-['JetBrains_Mono',monospace] font-bold uppercase tracking-[0.15em] text-white">No<span className="text-[#22d3ee]">DAW</span></span>
       </div>
-      <p className="text-xs text-nodaw-dim">&copy; {new Date().getFullYear()} NoDAW Studio. All rights reserved.</p>
+      <p className="text-[9px] font-['JetBrains_Mono',monospace] text-[#475569]">&copy; {new Date().getFullYear()} NoDAW Studio. All rights reserved.</p>
     </div>
   </footer>
 );
